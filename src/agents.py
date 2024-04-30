@@ -5,7 +5,9 @@ import logging
 
 
 
-
+# CrewOne is 3 Agents Delegation, Attorney General and Research 
+# CrewTwo will be 3 Agents Community Outreach, Documentation Specialist, Communications 
+# Other Crews will be imlemented as needed  
 class CrewOne():
     def delegation(self):
         return Agent(
