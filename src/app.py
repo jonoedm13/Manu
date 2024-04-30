@@ -1,7 +1,7 @@
 import streamlit as st
 import os
 
-# Define the functions for each chat assistant
+# This Defines the functions for each chat assistant 
 from manage_chat import Manu, Lawyer, Genealogist, Historian
 
 def check_environment_vars():
