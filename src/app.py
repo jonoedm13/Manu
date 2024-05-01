@@ -1,17 +1,17 @@
 import streamlit as st
 import os
 
-# Define the functions for each chat assistant
+# This Defines the Functions for each Chat Bot and Interfaces (page)
 from manage_chat import Manu, Lawyer, Genealogist, Historian
 
 def check_environment_vars():
-    """Check if necessary environment variables are set."""
+    """Check if Necessary ENV variables are set."""
     if "GROQ_API_KEY" not in os.environ:
         st.error("GROQ_API_KEY environment variable not set.")
         st.stop()
 
 def load_css():
-    """Load and apply CSS styles from a local file to the UI."""
+    """Load and Apply CSS styles from a local file to the UI."""
     if 'css_style' not in st.session_state:
         try:
             with open("style.css", "r") as f:
@@ -21,13 +21,13 @@ def load_css():
     st.markdown(st.session_state.css_style, unsafe_allow_html=True)
 
 def init_ui():
-    """Initialize the UI components, especially the sidebar for navigation."""
+    """Initialize the UI components, Especially the sidebar for Navigation."""
     load_css()
-    st.sidebar.title("Navigation")
+    st.sidebar.title("Navigator")
     return st.sidebar.radio("Choose a page", ["Manu", "Lawyer", "Genealogist", "Historian"])
 
 def main():
-    """Define the structure and flow of the application."""
+    """Define the Structure and Flow of the Application."""
     check_environment_vars()
     page = init_ui()
     # Display the selected page

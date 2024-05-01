@@ -1,15 +1,15 @@
 from textwrap import dedent
-from crewai import Task
+from crewai import Task #TODO: Complete WorkFlow for Tranfer of Findings from each Bot and Implement All API Access Points 
 class MlcTask():
     def delegation_task(self, delegation_handler):  #Delegation Task 
         return Task(
             description=dedent('''\
                 
-    Perform Facilitate the transfer of findings from the Genealogist to the Cultural Researcher..'''),
+    Perform Facilitate the Transfer of Findings from the Genealogist to the Cultural Researcher..'''),
                     
 expected_output=dedent('''\
 
-Successful integration of genealogical findings into cultural research..'''),
+Successful Integration of Genealogical Findings into Cultural Research..'''),
 agent=delegation_handler,
 async_execution=True)
     
@@ -30,7 +30,7 @@ encapsulating the resilience and richness of their cultural narrative'''),
 agent=research_agent,
 async_execution=True )
     
-    def legal_task(self, kings_council): #Legal Task 
+    def legal_task(self, kings_council): #Legal Task #TODO: Implement Tools And API Access Points 
         return Task(
             description=dedent('''\
                 
