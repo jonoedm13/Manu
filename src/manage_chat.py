@@ -9,7 +9,7 @@ from langchain_groq import ChatGroq
 from crewai import Crew, Process
 from agents import CrewOne
 from tasks import MlcTask
-# Configuring logging
+#For Configuring Logging this is a Basic Setup will need to Intergrade better Error Handling as app usage Grows  
 logging.basicConfig(level=logging.ERROR)
 
 def initialize_crew(topic=None, query=None):
@@ -20,7 +20,7 @@ def initialize_crew(topic=None, query=None):
     return crew, inputs
 
 def speak_response(text):
-    """Speak the provided text using a text-to-speech engine."""
+    """Speak the Provided Text using a Text-To-Speech Engine."""
     try:
         tts = gTTS(text=text, lang='en')
         tts.save("response.mp3")
@@ -30,7 +30,7 @@ def speak_response(text):
         logging.error(f"Failed to generate speech: {e}")
 
 def init_conversation(memory_length, crew):
-    """Initializes and returns a conversation chain with memory and model setup."""
+    """Initializes and Returns a ConversationChain with Memory and Bot Setup."""
     memory = ConversationBufferWindowMemory(k=memory_length)
     groq_api_key = os.getenv('GROQ_API_KEY', 'your-default-api-key')
     if groq_api_key == 'your-default-api-key':
@@ -40,7 +40,7 @@ def init_conversation(memory_length, crew):
     return ConversationChain(llm=groq_chat, verbose=True, memory=memory)
 
 def chat_interface(role, action):
-    """Handle the chat interface and interactions for the specified role."""
+    """Handle the Chat Interface and Interactions for the Specified Role."""
     model = st.sidebar.selectbox(
         'Choose a model',
         ['llama3-8b-8192', 'llama3-70b-8192', 'gemma-7b-lt', 'mixtral-8x7b-32768', 'llama2-70b-4096'],
@@ -62,18 +62,18 @@ def chat_interface(role, action):
         return
 
     if st.button('Submit') and user_question:
-        st.session_state.last_question = user_question  # Store last question
+        st.session_state.last_question = user_question  # Store Last Question
         with st.spinner(f"Loading Up For a {role}!!..."):
             response_data = st.session_state.conversation(user_question)
-            response_text = response_data.get('response', "No response received.")  # Extracting the response text
+            response_text = response_data.get('response', "No response received.")  # Extracting the Response Text
             if response_text:
-                st.session_state.last_response = response_text  # Store last response
+                st.session_state.last_response = response_text  # Store Last Response
                 st.success(f"{role} ({action}):")
-                st.write(response_text)  # Displaying the response text directly
+                st.write(response_text)  # Displaying the Response Text Directly
             else:
                 st.error("No response received. Please try again.")
 
-        st.session_state.reset = False  # Signal to reset on next run
+        st.session_state.reset = False  # Signal to Reset on Next Run-Time
 
         if st.button('Hear Response'):
             speak_response(st.session_state.last_response)
@@ -90,7 +90,7 @@ def Lawyer(kings_counsil):
     chat_interface("Lawyer", kings_counsil)
 
 def Genealogist():
-    chat_interface("Genealogist", "Whakapapa")
+    chat_interface("Genealogist", "Whakapapa") #TODO: Create and Add Genealogist to Acsess Ansestry.com API and or Input from User of there Whakapapa
 
 def Historian(research_agent):
     chat_interface("Historian", research_agent)
