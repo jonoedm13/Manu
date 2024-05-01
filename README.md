@@ -9,9 +9,8 @@ A compelling Journey for Manu the Multi-Chat Bot application. 🌟
 ## **Introduction**
 The Manu Multi-Chat Bot is an innovative application designed to address the complex issue of Maori land claims in New Zealand. By leveraging the power of AI and exploring potential blockchain integration, Manu aims to provide efficient, accurate, and personalized assistance to claimants and stakeholders.
 
-## **Archetypes**
 
-### 1. **The Adventure Archetype: The Pathfinder**
+### 1. **The Pathfinder**
 - **Role**: The Pathfinder is the adventurous spirit within Manu. It explores uncharted territories, seeking solutions and uncovering hidden insights.
 - **Functionality**:
     - **Natural Language Processing (NLP)**: The Pathfinder uses advanced NLP algorithms to understand claimant queries, ensuring accurate communication.
@@ -19,7 +18,7 @@ The Manu Multi-Chat Bot is an innovative application designed to address the com
     - **Geospatial Analysis**: The Pathfinder maps out land boundaries, historical ownership, and cultural significance.
     - **Machine Learning**: It adapts and learns from each interaction, improving its ability to guide claimants effectively.
 
-### 2. **The Sage Archetype: The Wise Counselor**
+### 2. **The Wise Counsel**
 - **Role**: The Wise Counselor embodies wisdom, empathy, and cultural understanding. It provides guidance and context.
 - **Functionality**:
     - **Legal Expertise**: The Wise Counselor interprets complex legal jargon, explaining rights, processes, and obligations to claimants.
