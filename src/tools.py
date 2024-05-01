@@ -8,7 +8,7 @@ from bs4 import BeautifulSoup
 import requests
 import re
 
-# Configure logging
+# Configure Logging Same again Update Logging and Error Handling As APP Usage Grows 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class BaseTool(BaseModel):
